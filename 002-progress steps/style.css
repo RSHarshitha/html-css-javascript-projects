@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
 :root {
-  --line-border-fill: #3498db;
-  --line-border-empty: #e0e0e0;
+  --line-border-fill: #ab3b3b;
+  --line-border-empty: #f4f3f3;
 }
 
 * {
@@ -11,7 +11,7 @@
 
 body {
   font-family: "Muli", sans-serif;
-  background-color: #f6f7fb;
+  background-color: #f0aaaa;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,9 +58,8 @@ body {
 }
 
 .step {
-  background-color: #fff;
-  color: #999;
-  border-radius: 50%;
+  background-color: var(--line-border-fill); /* filled star color */
+  color: #bf5757;
   height: 30px;
   width: 30px;
   display: flex;
@@ -68,15 +67,31 @@ body {
   justify-content: center;
   border: 3px solid var(--line-border-empty);
   transition: 0.4s ease;
+  font-size: 16px;
+  /* Star shape using polygon */
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
 }
 
 .step.active {
   border-color: var(--line-border-fill);
+  background-color: rgb(212, 52, 52); /* highlight active star */
+  color: #ffffff;
 }
 
 .btn {
   background-color: var(--line-border-fill);
-  color: #fff;
+  color: #000000;
   border: 0;
   border-radius: 6px;
   cursor: pointer;
